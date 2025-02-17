@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href>
+    <title>Surat Izin Sakit</title>
+    <style>
+      body {
+        background: black;
+      }
+
+      .kertas_a4 {
+        width: 21cm;
+        height: 29.7cm;
+        background: white;
+        padding: 2cm 2cm 2cm 2cm;
+        margin: auto;
+        font-family: "Times New Roman";
+        font-size: 12pt;
+        line-height: 150%;
+      }
+      .judul {
+        font-family: "century gothic";
+        font-size: 24pt;
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: 3cm;
+      }
+      .titimangsa {
+        text-align: right;
+        margin-bottom: 30px;
+      }
+      .kepada_yth {
+        padding-left: 1cm;
+        text-indent: -1cm;
+      }
+      .blok_ttd {
+        margin-left: 15cm;
+      }
+      .nama_ttd {
+        margin-top: 3cm;
+      }
+      .print-button {
+            background: #ff4b2b;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .print-button:hover {
+            background: #ff1a1a;
+        }
+
+        /* Tombol Print */
+        .print-button {
+            background: #ff4b2b;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .print-button:hover {
+            background: #ff1a1a;
+        }
+
+        /* Saat mode print, sembunyikan tombol */
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="kertas_a4" id="printArea">
+      <h1 class="judul">SURAT IZIN SAKIT</h1>
+
+      <p class="titimangsa">Bandung, 17 Februari 2025</p>
+
+      <p class="kepada_yth">Kepada Yth.</p>
+      <ul>
+        <p><strong>Pak iin solihin</strong></p>
+        <p>Ma'soem University</p>
+        <p>Di Tempat</p>
+      </ul>
+      <p><em>Dengan hormat,</em></p>
+
+      <p>Saya yang bertanda tangan di bawah ini:</p>
+
+      <div class="data-diri">
+        <ul>
+          <li>
+            <p><strong>Nama :</strong> Farhan Erik Ramadhan</p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p><strong>Prodi :</strong> Sistem Informasi (semester 2)</p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p><strong>NIM :</strong> 242505014</p>
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Dengan ini ingin mengajukan izin tidak dapat mengikuti
+        pelajaran pada tanggal 17 Februari 2025 karena
+        kondisi kesehatan saya yang tidak memungkinkan untuk beraktivitas
+        seperti biasa. Saya akan kembali beraktivitas setelah kondisi saya
+        membaik.
+      </p>
+
+      <p>
+        Demikian surat ini saya buat dengan sebenar-benarnya. Atas perhatian dan
+        pengertiannya, saya ucapkan terima kasih.
+      </p>
+
+      <div class="blok_ttd">
+        <p><em>Hormat saya,</em></p>
+        <p class="nama_ttd">
+          Farhan Erik Raamadhan
+        </p>
+      </div>
+    </div>
+    <button class="print-button" onclick="printSurat()">Print to PDF</button>
+    
+        <script>
+            function printSurat() {
+                let printContent = document.getElementById("printArea").innerHTML;
+                let originalContent = document.body.innerHTML;
+    
+                document.body.innerHTML = printContent;
+                window.print();
+                document.body.innerHTML = originalContent;
+            }
+        </script>
+  </body>
+</html>
